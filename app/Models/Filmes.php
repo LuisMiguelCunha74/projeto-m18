@@ -14,9 +14,16 @@ class Filmes extends Model
     protected $table='filmes';
     
     function gen(){
-        return $this->hasMany(
+        return $this->belongsTo(
           'App\Models\Generos',
             'id_genero'
+        );
+    }
+    
+    function atore(){
+        return $this->belongsTo(
+        'App\Models\Atores',
+            'id_ator'
         );
     }
 }

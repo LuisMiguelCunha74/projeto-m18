@@ -18,7 +18,7 @@ class AtoresController extends Controller
     
     public function show(request $request){
         $Atores = $request->num;
-        $Atores = Atores::where('id_Ator', $Atores)->first();
+        $Atores = Atores::where('id_Ator', $Atores)->with('movie')->first();
         return view ('Atores.show', [
             'Atores'=>$Atores
         ]);

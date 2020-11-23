@@ -4,10 +4,8 @@
 {{$Filmes->id_genero}}<br>
 {{$Filmes->sinopse}}
 
-<ul>
-@foreach($Filmes->gen as $gen)
-    <li>{{$gen->designacao}}</li>
-@endforeach
-</ul>
+{{$Filmes->gen->desginacao}}<br>
+
+{{$Filmes->atore->nome}}
 
 @endif
