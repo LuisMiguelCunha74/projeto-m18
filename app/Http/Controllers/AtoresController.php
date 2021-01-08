@@ -23,4 +23,48 @@ class AtoresController extends Controller
             'Atores'=>$Atores
         ]);
     }
+    
+    public function create(Request $request){
+        return view ('Atores.create');
+    }
+    
+    public function store(Request $request){
+        $novoAtor = $request->validate([
+           'nome'=>['required', 'min:3', 'max:255'],
+           'nacionalidade'=>['nullable', 'min:3', 'max:200'],
+           'data_nascimento'=>['nullable', 'min:3', 'max:50'],
+           'fotografia'=>['nullable', 'min:3', 'max:100']
+        ]);
+        $ator = Atores::create($novoAtor);
+        return redirect()->route('Atores.show', [
+           'num'=>$ator->id_ator 
+        ] );
+    }
+    
+    public function edit(Request $request){
+        $idAtores = $request->num;
+        //dd($idAtores);
+        $atores = Atores::where('id_ator', $idAtores)->first();
+        //dd($atores);
+        return view('atores.edit', [
+            'Atores'=>$atores
+        ]);
+    }
+    
+    public function update(Request $request){
+        $idAtores = $request->num;
+        $atores = Atores::findOrFail($idAtores);
+        dd($atores);
+        $atualizarAtor = $request->validate ([
+            'nome'=>['required', 'min:3', 'max:255'],
+            'nacionalidade'=>['nullable', 'min:3', 'max:200'],
+            'data_nascimento'=>['nullable', 'min:3', 'max:50'],
+            'fotografia'=>['nullable', 'min:3', 'max:100']
+        ]);
+        $atores->update($atualizarAtor);
+        
+        return redirect()->route('Atores.show', [
+            'num'=>$atores->id_Atores
+        ]);
+    }
 }

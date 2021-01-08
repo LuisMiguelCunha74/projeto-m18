@@ -14,5 +14,11 @@
 @foreach($Atores->movie as $movie)
     <li>{{$movie->titulo}}</li>
 @endforeach
+
+
+Created_at:{{$Atores->created_at}}<br>
+Updated_at:{{$Atores->updated_at}}<br>
+
 </ul>
 @endif
+

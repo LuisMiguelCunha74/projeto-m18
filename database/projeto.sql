@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Nov-2020 às 15:58
+-- Generation Time: 08-Jan-2021 às 18:25
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -45,7 +45,9 @@ CREATE TABLE `atores` (
 INSERT INTO `atores` (`id_ator`, `nome`, `nacionalidade`, `data_nascimento`, `fotografia`, `updated_at`, `created_at`) VALUES
 (1, 'Will Smith', 'norte-americano', '1968-09-25 00:00:00', 'WillSmith.jpg', NULL, NULL),
 (2, 'Jaden Christopher Syre Smith', 'norte-americano', '1998-07-08 00:00:00', NULL, NULL, NULL),
-(3, 'Johnny Depp', 'norte-americano', '1963-06-09 00:00:00', NULL, NULL, NULL);
+(3, 'Johnny Depp', 'norte-americano', '1963-06-09 00:00:00', NULL, NULL, NULL),
+(20, 'Luis', 'Portugues', NULL, NULL, '2021-01-08 16:10:03', '2021-01-08 16:10:03'),
+(21, 'Luis', 'Portugues', NULL, NULL, '2021-01-08 16:10:10', '2021-01-08 16:10:10');
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,7 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT for table `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `filmes`
