@@ -22,14 +22,19 @@ Route::get('/Atores/create', 'App\Http\Controllers\AtoresController@create')->na
 
 Route::post('/Atores', 'App\Http\Controllers\AtoresController@store')->name('atores.store');
 
-Route::get('/Atores/{num}/edit', 'App\Http\Controllers\AtoresController@edit')->name('aores.edit');
+Route::get('/Atores/{num}/edit', 'App\Http\Controllers\AtoresController@edit')->name('atores.edit');
 
 Route::patch('/Atores', 'App\Http\Controllers\AtoresController@update')->name('atores.update');
 
+Route::get('Atores/{num}/delete', 'App\Http\Controllers\AtoresController@delete')->name('atores.delete');
+
+Route::delete('/Atores', 'App\Http\Controllers\AtoresController@destroy')->name('atores.destroy');
+    
 //Filmes
 Route::get('/Filmes', 'App\Http\Controllers\FilmesController@index')->name('Filmes.index');
 
 Route::get('/Filmes/{numero}/show', 'App\Http\Controllers\FilmesController@show')->name('Filmes.show');
+
 
 
 //generos

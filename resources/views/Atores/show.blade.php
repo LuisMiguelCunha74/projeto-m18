@@ -20,5 +20,6 @@ Created_at:{{$Atores->created_at}}<br>
 Updated_at:{{$Atores->updated_at}}<br>
 
 </ul>
+
 @endif
 

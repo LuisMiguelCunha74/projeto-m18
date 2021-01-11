@@ -11,6 +11,7 @@ class AtoresController extends Controller
     
     public function index(){
         $Atores = Atores :: all();
+        //dd($Atores);
         return view ('Atores.index', [
             'Atores'=>$Atores
         ]);
@@ -54,7 +55,6 @@ class AtoresController extends Controller
     public function update(Request $request){
         $idAtores = $request->num;
         $atores = Atores::findOrFail($idAtores);
-        dd($atores);
         $atualizarAtor = $request->validate ([
             'nome'=>['required', 'min:3', 'max:255'],
             'nacionalidade'=>['nullable', 'min:3', 'max:200'],
@@ -62,9 +62,24 @@ class AtoresController extends Controller
             'fotografia'=>['nullable', 'min:3', 'max:100']
         ]);
         $atores->update($atualizarAtor);
-        
         return redirect()->route('Atores.show', [
-            'num'=>$atores->id_Atores
+            'num'=>$atores->id_ator
         ]);
+    }
+  
+    public function delete(Request $request){
+        $id_ator = $request->num;
+        $atores = Atores::where('id_ator', $id_ator)->first();
+        return view('atores.delete',[
+            'atores'=>$atores
+        ]);
+    }
+    
+    public function destroy(Request $request){
+        $id_ator = $request->num;
+        $atores = Atores::findOrFail($id_ator);
+        //dd($atores);
+        $atores->delete();
+        return redirect()->route('Atores.index')->with('mensagem', 'Livro eliminado!');
     }
 }
