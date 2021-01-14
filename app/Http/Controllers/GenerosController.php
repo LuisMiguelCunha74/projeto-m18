@@ -30,7 +30,7 @@ class GenerosController extends Controller
         $novoGenero = $request->validate([
            'id_genero'=>['nullable', 'numeric'],
            'designacao'=>['required', 'min:3', 'max:100'],
-           'observacao'=>['nullable', 'min:1', 'max:255']
+           'observacoes'=>['nullable', 'min:1', 'max:255']
         ]);
         $genero = Generos::create($novoGenero);
         return redirect()->route('Generos.show', [
@@ -53,7 +53,7 @@ class GenerosController extends Controller
         $atualizarGenero = $request->validate ([
            'id_genero'=>['nullable', 'numeric'],
            'designacao'=>['required', 'min:3', 'max:100'],
-           'observacao'=>['nullable', 'min:1', 'max:255']
+           'observacoes'=>['nullable', 'min:1', 'max:255']
         ]);
         $generos->update($atualizarGenero);
         return redirect()->route('Generos.show', [

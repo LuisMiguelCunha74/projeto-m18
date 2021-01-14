@@ -22,6 +22,6 @@ class Generos extends Model
     protected $fillable= [
         'id_genero',
         'designacao',
-        'observacao',
+        'observacoes',
     ];
 }

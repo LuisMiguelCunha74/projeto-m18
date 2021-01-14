@@ -15,4 +15,3 @@
 <button>
     <a href="{{route('atores.create',['num'=>$Ator->id_ator])}}">criar</a>
 </button>
-

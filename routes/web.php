@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//pagina inicial
+Route::get('/', [App\Http\Controllers\PaginaInicialController::class, 'index'])->name('home');
 
 //Atores
 Route::get('/Atores', 'App\Http\Controllers\AtoresController@index')->name('Atores.index');
