@@ -19,4 +19,9 @@ class Generos extends Model
             'id_genero'
         );
     }
+    protected $fillable= [
+        'id_genero',
+        'designacao',
+        'observacao',
+    ];
 }

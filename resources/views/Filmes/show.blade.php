@@ -3,9 +3,7 @@
 {{$Filmes->titulo}}<br>
 {{$Filmes->id_genero}}<br>
 {{$Filmes->sinopse}}
-
 {{$Filmes->gen->desginacao}}<br>
-
 {{$Filmes->atore->nome}}
 
 @endif

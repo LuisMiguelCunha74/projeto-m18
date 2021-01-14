@@ -26,4 +26,12 @@ class Filmes extends Model
             'id_ator'
         );
     }
+    protected $fillable= [
+        'titulo',
+        'id_genero',
+        'sinopse',
+        'quantidade',
+        'idioma',
+        'id_ator'
+    ];
 }
