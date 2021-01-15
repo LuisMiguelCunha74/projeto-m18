@@ -32,7 +32,7 @@
             <a class="dropdown-item" href="{{route('login')}}">Login</a>
             
             
-            <a class="dropdown-item" href="{{route('Register')}}">Register</a>
+            <a class="dropdown-item" href="{{route('register')}}">Register</a>
             
             
             @if(auth()->check())
@@ -45,7 +45,7 @@
             @endif
         </div>
         @if(auth()->check())
-            {{Auth::user()->nome}}<br>
+            {{Auth::user()->name}}<br>
             {{Auth::user()->email}}<br>
         @endif
     </nav>

@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //pagina inicial
+Auth::routes();
+
 Route::get('/', [App\Http\Controllers\PaginaInicialController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\PaginaInicialController::class, 'index'])->name('home');
 
 //Atores
 Route::get('/Atores', 'App\Http\Controllers\AtoresController@index')->name('Atores.index');
@@ -65,3 +71,4 @@ Route::patch('/Generos', 'App\Http\Controllers\GenerosController@update')->name(
 Route::get('Generos/{num}/delete', 'App\Http\Controllers\GenerosController@delete')->name('generos.delete');
 
 Route::delete('/Generos', 'App\Http\Controllers\GenerosController@destroy')->name('generos.destroy');
+
